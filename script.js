@@ -7,7 +7,7 @@ setTimeout(() => {
     if (p && p.style.display !== "none") { p.style.opacity = "0"; setTimeout(() => p.style.display = "none", 500); }
 }, 3000);
 document.addEventListener("DOMContentLoaded", () => {
-    const h = document.querySelector("header"), b = document.querySelector(".burger"), n = document.querySelector(".nav-menu");
+    const h = document.querySelector("header"), b = document.getElementById("burger-toggle"), n = document.getElementById("nav-overlay");
     window.addEventListener("scroll", () => {
         if (h) window.scrollY > 50 ? h.classList.add("scrolled") : h.classList.remove("scrolled");
     });
@@ -29,13 +29,16 @@ document.addEventListener("DOMContentLoaded", () => {
             s[cur].classList.add("active");
         }, 5000);
     }
-    const imgs = document.querySelectorAll(".gallery-item img"), lb = document.getElementById("lightbox");
+    const imgs = document.querySelectorAll(".album-card img, .gallery-item img"), lb = document.getElementById("lightbox");
     if (imgs.length > 0 && lb) {
         const lImg = document.getElementById("lightbox-img"), lCnt = document.getElementById("lightbox-counter"), 
               cl = document.querySelector(".lightbox-close"), pr = document.querySelector(".lightbox-prev"), nx = document.querySelector(".lightbox-next");
         let idx = 0, arr = Array.from(imgs).map(i => i.src);
         const up = () => { if (lImg) lImg.src = arr[idx]; if (lCnt) lCnt.textContent = `${idx + 1} / ${arr.length}`; };
-        imgs.forEach((img, i) => img.addEventListener("click", () => { idx = i; up(); lb.classList.add("active"); document.body.style.overflow = "hidden"; }));
+        imgs.forEach((img, i) => img.addEventListener("click", (e) => { 
+            if (img.closest('.album-card') && !img.closest('.gallery-page')) return;
+            e.preventDefault(); idx = i; up(); lb.classList.add("active"); document.body.style.overflow = "hidden"; 
+        }));
         if (cl) cl.addEventListener("click", () => { lb.classList.remove("active"); document.body.style.overflow = "auto"; });
         if (nx) nx.addEventListener("click", () => { idx = (idx + 1) % arr.length; up(); });
         if (pr) pr.addEventListener("click", () => { idx = (idx - 1 + arr.length) % arr.length; up(); });
