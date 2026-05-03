@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+    <title>Contacts | DP.PORTFOLIO</title>
+    <meta name="description" content="Contact Dominik Šuškevič. Fill out the form or write directly.">
+    <meta name="keywords" content="contacts, photographer, inquiry, form, Kaunas, Svencioneliai">
+    <meta name="author" content="Dominik Šuškevič">
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://en.dominikphotofficial.lt/contacts.html">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@300;400&family=Jost:wght@300;400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/png" href="https://iili.io/fjNLbs4.png">
+</head>
+<body>
+    <div id="preloader"><div class="loader"></div></div>
+    <header id="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html">
+                    <img src="https://iili.io/fjNLbs4.png" alt="DP.PORTFOLIO">
+                </a>
+            </div>
+            <div class="burger" id="burger-toggle">
+                <div></div>
+                <div></div>
+                <div></div>
+            </div>
+        </div>
+    </header>
+    <div class="nav-menu" id="nav-overlay">
+        <div class="nav-links">
+            <a href="index.html" class="nav-link">Works</a>
+            <a href="services.html" class="nav-link">Services</a>
+            <a href="biography.html" class="nav-link">Biography</a>
+            <a href="about.html" class="nav-link">About</a>
+            <a href="contacts.html" class="nav-link active">Contacts</a>
+        </div>
+    </div>
+    <section class="container" style="padding-top: 160px; padding-bottom: 100px;">
+        <h1 class="section-title fade-in-up">Get in Touch</h1>
+        <div class="contact-grid fade-in-up">
+            <div class="info-card">
+                <div class="info-group">
+                    <span class="info-label">Email</span>
+                    <a href="mailto:Dominikphotofficial.lt@gmail.com" class="info-value">Dominikphotofficial.lt@gmail.com</a>
+                </div>
+                <div class="divider"></div>
+                <div class="info-group">
+                    <span class="info-label">Phone</span>
+                    <a href="tel:+37062337615" class="info-value">+370 623 37615</a>
+                </div>
+                <div class="divider"></div>
+                <div class="info-group">
+                    <span class="info-label">Location</span>
+                    <span class="info-value">Kaunas / Švenčionėliai</span>
+                </div>
+            </div>
+            <div class="form-card">
+                <h3 class="form-title">Inquiry Form</h3>
+                <form action="https://formspree.io/f/mgvnbvaw" method="POST" class="contact-form">
+                    <div class="form-group">
+                        <label for="name">Name</label>
+                        <input type="text" id="name" name="name" required placeholder="Your name">
+                    </div>
+                    <div class="form-group">
+                        <label for="email">Email</label>
+                        <input type="email" id="email" name="email" required placeholder="Your email">
+                    </div>
+                    <div class="form-group">
+                        <label for="style">Service</label>
+                        <select id="style" name="style">
+                            <option value="Retro Foto">Retro Photography</option>
+                            <option value="Cinematic Video">Cinematic Video</option>
+                            <option value="Fotosesija">Personal Photoshoot</option>
+                            <option value="Kita">Other project</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="message">Message</label>
+                        <textarea id="message" name="message" rows="5" required placeholder="Describe your idea..."></textarea>
+                    </div>
+                    <button type="submit" class="submit-btn">Send</button>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer>
+        <p>&copy; 2026 DP.PORTFOLIO. All rights reserved.</p>
+        <div class="lang-switcher">
+            <a href="https://portfolio.dominikphotofficial.lt">LT</a>
+            <a href="https://en.dominikphotofficial.lt" class="active">EN</a>
+            <a href="https://pl.dominikphotofficial.lt">PL</a>
+            <a href="https://ru.dominikphotofficial.lt">RU</a>
+            <a href="https://kr.dominikphotofficial.lt">KR</a>
+        </div>
+    </footer>
+    <script src="script.js"></script>
+</body>
+</html>
